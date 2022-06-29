@@ -32,7 +32,7 @@ app.get('/', function(req, res) {
       // authenticated
       org.authenticate(req.query, function(err) {
         if (!err) {
-          org.query({ query: 'SELECT id, name, type, industry, rating FROM Account' }, function(err, results) {
+          org.query({ query: 'SELECT id, name, type, industry FROM Account' }, function(err, results) {
             if (!err) {
               res.render('index', {records: results.records});
             }
